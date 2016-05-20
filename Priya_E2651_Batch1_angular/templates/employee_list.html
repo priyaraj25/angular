@@ -1,0 +1,15 @@
+<span>{{username + " " + empId}}</span>
+<div >
+   <div>
+      <employee-add-directive info="emp" add-or-update="addemployee()" btn="Add Employee"></employee-add-directive>
+   </div>
+   Filter : <input type="text" ng-model="search.name" />
+   <input type="checkbox" ng-model="myChkModel" ng-change="myClick(myChkModel)" />
+   <ul>
+      <li ng-repeat="e in employees | filter:search:comparatorFunction">
+         <employee-directive>
+         </employee-directive>
+      </li>
+   </ul>
+</div>
+<div ng-include src="'templates/activity.html'"></div>
