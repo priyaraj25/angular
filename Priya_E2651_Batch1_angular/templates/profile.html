@@ -1,12 +1,12 @@
 <div ng-controller="ProfileController">
-   <h4>Name: {{currentEmployee.name}}</h4>
-   <h4>Role: {{currentEmployee.role}}</h4>
-   <h4>CurrentProject: {{currentEmployee.project.project_name}} and {{currentEmployee.project.project_location}}</h4>
+   <h4>Name: {{pemployee.name}}</h4>
+   <h4>Role: {{pemployee.role}}</h4>
+   <h4>CurrentProject: {{pemployee.project.project_name}} and {{pemployee.project.project_location}}</h4>
    <br></br>
    <div>
-      <employee-add-directive info="currentEmployee" add-or-update="update(currentEmployee)" btn="Update Employee"></employee-add-directive>
+      <employee-add-directive info="currentEmployee" button-disabled="buttonDisabled" add-or-update="update(currentEmployee)" btn="Update Employee"></employee-add-directive>
    </div>
-   <!--  <input type="text" placeholder="input name" ng-model="currentEmployee.name"/>
+   <!--<input type="text" placeholder="input name" ng-model="currentEmployee.name"/>
       <input type="text" placeholder="input role" ng-model="currentEmployee.role"/>
       <input type="text" placeholder="input project name" ng-model="currentEmployee.project.project_name"/>
       <input type="text" placeholder="input project location" ng-model="currentEmployee.project.project_location"/>

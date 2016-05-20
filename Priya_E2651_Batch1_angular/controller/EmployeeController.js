@@ -111,7 +111,7 @@
 
 
 
- angular.module('mainApp').factory('employeeFactory', function() {
+ angular.module('employee').factory('employeeFactory', function() {
      var emplist = [{
          id: 1,
          name: 'John',
@@ -152,10 +152,18 @@
 
              var flag = false;
 
+			 if(e.project_name == null || e.project_location == null){
+				 e.project_name = "TBD";
+				 e.project_location = "TBD";
+				 
+			 }
+			 
+			 
              var emplength = emplist.length;
              for (var i = 0; i < emplength; i++) {
                  if (emplist[i].name.toLowerCase() === e.name.toLowerCase()) {
                      alert("Existing User");
+					
                      flag = true;
                      break;
                  }
@@ -197,10 +205,15 @@
  });
 
 
- angular.module('mainApp').filter('myFilter', function() {
+ angular.module('employee').filter('myFilter', function() {
      return function(emp) {
-         var i = "Employee Id :" + emp.id + " -> " + emp.name + "'s role is " + emp.role + "	working in	" + emp.project.project_name + "	at	" + emp.project.project_location;
-         return i;
+		  var i;
+		if(emp.project == null || emp.project.project_name == null  || emp.project.project_location ==null){
+          i = "Employee Id :" + emp.id + " -> " + emp.name + "'s role is " + emp.role + "	working in	" + "TBD" + "	at	" + "TBD";         
+		}else{
+          i = "Employee Id :" + emp.id + " -> " + emp.name + "'s role is " + emp.role + "	working in	" + emp.project.project_name + "	at	" + emp.project.project_location;
+		}
+		 return i;
      };
  });
 

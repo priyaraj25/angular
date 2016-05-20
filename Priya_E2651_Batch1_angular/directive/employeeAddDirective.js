@@ -5,11 +5,11 @@ angular.module('mainApp').directive('employeeAddDirective', function() {
     scope: {
       addOrUpdate: "&addOrUpdate",
       employeeInfo: '=info',
-	  btn: '@'
+	  btn: '@',
+	 buttonDisabled: '='
 	  
     },
     templateUrl: "directive/employeeAddDirective.html"
-	
     //template: '<h3>{{e.name +  " woking as a " + e.role + " in a project " + e.project.name + " at " + e.project.location}}. <button ng-click ="delete(e)" >Delete</button><button ng-click ="seeProfile(e)" >See Profile</button></h3>'
   }
 });
